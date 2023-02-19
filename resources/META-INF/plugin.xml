@@ -1,0 +1,31 @@
+<idea-plugin>
+  <id>extension.open-in-typora</id>
+  <name>Open with Typora</name>
+  <version>1.0</version>
+  <vendor email="761451281@qq.com" url="">zlx</vendor>
+
+  <description>Open File in Typra.</description>
+  <change-notes>
+    First release.
+  </change-notes>
+
+  <!-- please see https://plugins.jetbrains.com/docs/intellij/build-number-ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="OpenInTyporaAction" class="actions.OpenInTyporaAction" text="Open In Typora"
+            description="Open File in Typora">
+      <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+    </action>
+  </actions>
+
+</idea-plugin>
