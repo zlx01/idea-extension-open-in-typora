@@ -18,22 +18,22 @@ public class OpenInTyporaAction extends AnAction {
             return;
         }
 
-        String typoraPath = null;
         if (SystemUtils.IS_OS_WINDOWS) {
-            typoraPath = System.getenv("ProgramFiles") + "\\Typora\\Typora.exe";
-        } else if (SystemUtils.IS_OS_MAC) {
-            typoraPath = "Typora";
-        }
-
-        if (typoraPath != null) {
+            String typoraPath = "c:\\Program Files\\Typora\\Typora.exe";
+            // 如果配置了环境变量，可以直接使用 typora
+            // String typoraPath = "typora";
             try {
-                Runtime.getRuntime().exec(new String[]{"open", "-a", typoraPath, file.getPath()});
+                System.out.println(file.getPath());
+                Runtime.getRuntime().exec(new String[]{typoraPath, file.getPath()});
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
-        } else {
-            // 处理无法找到 Typora 安装路径的情况
-            System.out.println("找不到typora");
+        } else if (SystemUtils.IS_OS_MAC) {
+            try {
+                Runtime.getRuntime().exec(new String[]{"open", "-a", "Typora", file.getPath()});
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
         }
     }
 }
