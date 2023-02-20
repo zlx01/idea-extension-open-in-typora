@@ -1,6 +1,6 @@
 <idea-plugin>
   <id>extension.open-in-typora</id>
-  <name>Open with Typora</name>
+  <name>Open in Typora</name>
   <version>1.0</version>
   <vendor email="761451281@qq.com" url="">zlx</vendor>
 
